@@ -14,6 +14,8 @@
       v-model="password"
       placeholder="password" />
     <br>
+    <div class="error" v-html="error"/>
+    <br>
     <button
       @click="register">Register</button>
   </div>
@@ -28,22 +30,30 @@ export default {
     // two way binding
     return {
       email: 'abc',
-      password: '123'
+      password: '123',
+      error: null // have to add error here if you want it to be returned
     }
   },
   methods: {
     // async & register used instead of promises
     async register () {
-      const response = await AuthenticationService.register({
-        email: this.email,
-        password: this.password
-      })
-      // console.log('register button was clicked', this.email, this.password)
-      console.log(response.data)
+      try {
+        await AuthenticationService.register({
+          email: this.email,
+          password: this.password
+        })
+      } catch (error) {
+        // What is returned from axios and error should be
+        // what we defined in the back end
+        this.error = error.response.data.error
+      }
     }
   }
 }
 </script>
 
 <style scoped>
+  .error {
+    color: red;
+  }
 </style>
