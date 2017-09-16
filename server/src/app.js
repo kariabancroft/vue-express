@@ -13,9 +13,15 @@ app.use(cors())
 
 // Give it the HTTP verb you want it to use
 // Then the endpoint
-app.get('/status', (req, res) => {
+// app.get('/status', (req, res) => {
+//   res.send({
+//     message: 'hello world!'
+//   })
+// })
+
+app.post('/register', (req, res) => {
   res.send({
-    message: 'hello world!'
+    message: `Your user, ${req.body.email} was registered!`
   })
 })
 
