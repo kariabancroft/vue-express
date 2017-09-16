@@ -1,3 +1,8 @@
+<!-- Vue components have three parts:
+1. template
+2. script tag with data, methods, etc.
+3. styles scoped to this component -->
+
 <template>
   <div>
     <h1>Cool! Register!</h1>
