@@ -1,7 +1,6 @@
+const AuthenticationController = require('./controllers/AuthenticationController')
+
+// Set up the route to point to the appropriate controller action
 module.exports = (app) => {
-  app.post('/register', (req, res) => {
-    res.send({
-      message: `Your user, ${req.body.email} was registered!`
-    })
-  })
+  app.post('/register', AuthenticationController.register)
 }
