@@ -4,6 +4,9 @@ export default {
   register (credentials) {
     // Post of axios module
     return Api().post('register', credentials)
+  },
+  login (credentials) {
+    return Api().post('login', credentials)
   }
 }
 

@@ -18,6 +18,10 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
+      <v-btn flat dark
+        @click="navigateTo({name: 'login'})">
+        Login
+      </v-btn>
       <!--<router-link to="register">  looks in the router for something that has exactly the same name -->
         <v-btn flat dark
           @click="navigateTo({name: 'register'})">
