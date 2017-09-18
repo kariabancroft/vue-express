@@ -1,12 +1,26 @@
 <template>
   <div id="app">
+    <v-app>
+      <page-header /> <!--from the loaded vue component we created! -->
+      <!-- maybe magic naming conventions? -->
+      <main> <!--this is some vuetify magic to give extra spacing a nd goodness-->
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </main>
+    </v-app>
+
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/Header.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    PageHeader  // Header might be a reserved Vue word
+  }
 }
 </script>
 
@@ -20,11 +34,4 @@ export default {
   margin-top: 60px;
 }
 
-.input-group--text-field {
-  border-bottom: 1px solid;
-}
-
-.light-on-dark {
-  color: white;
-}
 </style>
