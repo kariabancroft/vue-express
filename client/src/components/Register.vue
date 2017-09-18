@@ -44,8 +44,8 @@ export default {
   data () {
     // two way binding
     return {
-      email: 'abc',
-      password: '123',
+      email: '',
+      password: '',
       error: null // have to add error here if you want it to be returned
     }
   },
