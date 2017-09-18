@@ -19,4 +19,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.input-group--text-field {
+  border-bottom: 1px solid;
+}
+
+.light-on-dark {
+  color: white;
+}
 </style>
